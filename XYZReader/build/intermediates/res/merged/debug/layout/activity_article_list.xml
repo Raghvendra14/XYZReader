@@ -17,10 +17,12 @@
             android:id="@+id/collapsing_toolbar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            app:layout_scrollFlags="scroll|enterAlways|exitUntilCollapsed"
             android:fitsSystemWindows="true"
-            android:minHeight="?actionBarSize"
             app:contentScrim="?attr/colorPrimary"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed|enterAlways">
+            app:expandedTitleMarginStart="48dp"
+            app:expandedTitleMarginBottom="20dp"
+            app:expandedTitleMarginEnd="64dp">
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
@@ -28,8 +30,9 @@
                 android:layout_marginLeft="@dimen/list_toolbar_side_margin"
                 android:layout_marginRight="@dimen/list_toolbar_side_margin"
                 android:layout_width="match_parent"
-                android:layout_height="?actionBarSize"
-                android:layout_gravity="bottom">
+                android:layout_height="?attr/actionBarSize"
+                android:layout_gravity="bottom"
+                app:layout_collapseMode="pin">
 
                 <ImageView
                     android:layout_width="wrap_content"
