@@ -17,12 +17,9 @@
             android:id="@+id/collapsing_toolbar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_scrollFlags="scroll|enterAlways|exitUntilCollapsed"
             android:fitsSystemWindows="true"
             app:contentScrim="?attr/colorPrimary"
-            app:expandedTitleMarginStart="48dp"
-            app:expandedTitleMarginBottom="20dp"
-            app:expandedTitleMarginEnd="64dp">
+            app:layout_scrollFlags="scroll|enterAlways|exitUntilCollapsed">
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
@@ -60,7 +57,5 @@
             android:paddingRight="@dimen/list_side_margin"
             android:paddingBottom="28dp" />
     </android.support.v4.widget.SwipeRefreshLayout>
-
-
 
 </android.support.design.widget.CoordinatorLayout>
