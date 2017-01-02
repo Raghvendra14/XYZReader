@@ -37,6 +37,25 @@
                 "from": {
                     "file": "C:\\Users\\Raghvendra\\XYZReader\\XYZReader\\src\\main\\res\\values-sw600dp-land\\macro_layout.xml"
                 }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 205,
+                    "endColumn": 46,
+                    "endOffset": 247
+                },
+                "from": {
+                    "file": "C:\\Users\\Raghvendra\\XYZReader\\XYZReader\\src\\main\\res\\values-sw600dp-land\\macro_layout.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 85,
+                        "endColumn": 46,
+                        "endOffset": 127
+                    }
+                }
             }
         ]
     }

@@ -118,6 +118,20 @@ public class ArticleDetailFragment extends Fragment implements
 
         mCollapsingToolbar = (CollapsingToolbarLayout) mRootView.findViewById(R.id.collapsing_toolbar);
         mAppBar = (AppBarLayout) mRootView.findViewById(R.id.appbar);
+        mAppBar.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
+            @Override
+            public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
+                if (verticalOffset < -180) {
+                    mPhotoView.setVisibility(View.INVISIBLE);
+                    if (mMutedColor != 0xFF333333)
+                        mCollapsingToolbar.setBackgroundColor(mMutedColor);
+                } else {
+                    mPhotoView.setVisibility(View.VISIBLE);
+                    mCollapsingToolbar.setBackgroundColor(getResources().getColor(android.R.color.transparent));
+                    mRootView.findViewById(R.id.meta_bar).setBackgroundColor(getResources().getColor(android.R.color.transparent));
+                }
+            }
+        });
 
         mScrollView = (ObservableScrollView) mRootView.findViewById(R.id.scrollview);
         mScrollView.setCallbacks(new ObservableScrollView.Callbacks() {
@@ -125,13 +139,13 @@ public class ArticleDetailFragment extends Fragment implements
             public void onScrollChanged() {
                 mScrollY = mScrollView.getScrollY();
                 getActivityCast().onUpButtonFloorChanged(mItemId, ArticleDetailFragment.this);
-                mPhotoContainerView.setTranslationY((int) (mScrollY - mScrollY / PARALLAX_FACTOR));
+//                mPhotoContainerView.setTranslationY((int) (mScrollY - mScrollY / PARALLAX_FACTOR));
                 updateStatusBar();
             }
         });
 
         mPhotoView = (ImageView) mRootView.findViewById(R.id.photo);
-        mPhotoContainerView = mRootView.findViewById(R.id.photo_container);
+//        mPhotoContainerView = mRootView.findViewById(R.id.photo_container);
 
         mStatusBarColorDrawable = new ColorDrawable(0);
 
@@ -268,14 +282,15 @@ public class ArticleDetailFragment extends Fragment implements
         bindViews();
     }
 
-    public int getUpButtonFloor() {
-        if (mPhotoContainerView == null || mPhotoView.getHeight() == 0) {
-            return Integer.MAX_VALUE;
-        }
-
-        // account for parallax
-        return mIsCard
-                ? (int) mPhotoContainerView.getTranslationY() + mPhotoView.getHeight() - mScrollY
-                : mPhotoView.getHeight() - mScrollY;
-    }
+//    public int getUpButtonFloor() {
+////        if (mPhotoContainerView == null || mPhotoView.getHeight() == 0) {
+////            return Integer.MAX_VALUE;
+////        }
+////
+////        // account for parallax
+////        return mIsCard
+////                ? (int) mPhotoContainerView.getTranslationY() + mPhotoView.getHeight() - mScrollY
+////          : mPhotoView.getHeight() - mScrollY;
+//        return 1;
+//    }
 }

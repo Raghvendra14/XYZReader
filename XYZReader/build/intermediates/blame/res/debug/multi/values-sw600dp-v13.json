@@ -307,8 +307,27 @@
                     "startLine": 27,
                     "startColumn": 4,
                     "startOffset": 1664,
+                    "endColumn": 46,
+                    "endOffset": 1706
+                },
+                "from": {
+                    "file": "C:\\Users\\Raghvendra\\XYZReader\\XYZReader\\src\\main\\res\\values-sw600dp\\macro_layout.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 38,
+                        "endColumn": 46,
+                        "endOffset": 80
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 28,
+                    "startColumn": 4,
+                    "startOffset": 1711,
                     "endColumn": 94,
-                    "endOffset": 1754
+                    "endOffset": 1801
                 },
                 "from": {
                     "file": "C:\\Users\\Raghvendra\\XYZReader\\XYZReader\\src\\main\\res\\values-sw600dp\\dimens.xml"
@@ -316,11 +335,11 @@
             },
             {
                 "to": {
-                    "startLine": 28,
+                    "startLine": 29,
                     "startColumn": 4,
-                    "startOffset": 1759,
+                    "startOffset": 1806,
                     "endColumn": 62,
-                    "endOffset": 1817
+                    "endOffset": 1864
                 },
                 "from": {
                     "file": "C:\\Users\\Raghvendra\\XYZReader\\XYZReader\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.2.0\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml"
@@ -328,12 +347,12 @@
             },
             {
                 "to": {
-                    "startLine": 29,
+                    "startLine": 30,
                     "startColumn": 4,
-                    "startOffset": 1822,
-                    "endLine": 32,
+                    "startOffset": 1869,
+                    "endLine": 33,
                     "endColumn": 12,
-                    "endOffset": 1999
+                    "endOffset": 2046
                 },
                 "from": {
                     "file": "C:\\Users\\Raghvendra\\XYZReader\\XYZReader\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.2.0\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml"
