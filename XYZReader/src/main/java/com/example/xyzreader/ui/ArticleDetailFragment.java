@@ -11,6 +11,8 @@ import android.graphics.Rect;
 import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.support.design.widget.AppBarLayout;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.app.ShareCompat;
 import android.support.v7.graphics.Palette;
 import android.text.Html;
@@ -48,6 +50,8 @@ public class ArticleDetailFragment extends Fragment implements
     private DrawInsetsFrameLayout mDrawInsetsFrameLayout;
     private ColorDrawable mStatusBarColorDrawable;
 
+    private CollapsingToolbarLayout mCollapsingToolbar;
+    private AppBarLayout mAppBar;
     private int mTopInset;
     private View mPhotoContainerView;
     private ImageView mPhotoView;
@@ -112,6 +116,9 @@ public class ArticleDetailFragment extends Fragment implements
             }
         });
 
+        mCollapsingToolbar = (CollapsingToolbarLayout) mRootView.findViewById(R.id.collapsing_toolbar);
+        mAppBar = (AppBarLayout) mRootView.findViewById(R.id.appbar);
+
         mScrollView = (ObservableScrollView) mRootView.findViewById(R.id.scrollview);
         mScrollView.setCallbacks(new ObservableScrollView.Callbacks() {
             @Override
@@ -131,9 +138,15 @@ public class ArticleDetailFragment extends Fragment implements
         mRootView.findViewById(R.id.share_fab).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String shareText = "";
+                if (mCursor != null) {
+                    shareText = mCursor.getString(ArticleLoader.Query.TITLE) + ",\n" +
+                            mCursor.getString(ArticleLoader.Query.AUTHOR) + "\n" +
+                            mCursor.getString(ArticleLoader.Query.PHOTO_URL);
+                }
                 startActivity(Intent.createChooser(ShareCompat.IntentBuilder.from(getActivity())
                         .setType("text/plain")
-                        .setText("Some sample text")
+                        .setText(shareText)
                         .getIntent(), getString(R.string.action_share)));
             }
         });

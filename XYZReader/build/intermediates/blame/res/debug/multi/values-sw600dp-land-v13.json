@@ -11,14 +11,7 @@
                     "endOffset": 94
                 },
                 "from": {
-                    "file": "C:\\Users\\Raghvendra\\XYZReader\\XYZReader\\src\\main\\res\\values-sw600dp-land\\macro_layout.xml",
-                    "position": {
-                        "startLine": 2,
-                        "startColumn": 4,
-                        "startOffset": 36,
-                        "endColumn": 43,
-                        "endOffset": 75
-                    }
+                    "file": "C:\\Users\\Raghvendra\\XYZReader\\XYZReader\\src\\main\\res\\values-sw600dp-land\\macro_layout.xml"
                 }
             },
             {
@@ -26,37 +19,23 @@
                     "startLine": 3,
                     "startColumn": 4,
                     "startOffset": 99,
-                    "endColumn": 54,
-                    "endOffset": 149
+                    "endColumn": 53,
+                    "endOffset": 148
                 },
                 "from": {
-                    "file": "C:\\Users\\Raghvendra\\XYZReader\\XYZReader\\src\\main\\res\\values-sw600dp-land\\macro_layout.xml",
-                    "position": {
-                        "startLine": 5,
-                        "startColumn": 4,
-                        "startOffset": 133,
-                        "endColumn": 54,
-                        "endOffset": 183
-                    }
+                    "file": "C:\\Users\\Raghvendra\\XYZReader\\XYZReader\\src\\main\\res\\values-sw600dp-land\\macro_layout.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 4,
                     "startColumn": 4,
-                    "startOffset": 154,
+                    "startOffset": 153,
                     "endColumn": 51,
-                    "endOffset": 201
+                    "endOffset": 200
                 },
                 "from": {
-                    "file": "C:\\Users\\Raghvendra\\XYZReader\\XYZReader\\src\\main\\res\\values-sw600dp-land\\macro_layout.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 4,
-                        "startOffset": 81,
-                        "endColumn": 51,
-                        "endOffset": 128
-                    }
+                    "file": "C:\\Users\\Raghvendra\\XYZReader\\XYZReader\\src\\main\\res\\values-sw600dp-land\\macro_layout.xml"
                 }
             }
         ]
