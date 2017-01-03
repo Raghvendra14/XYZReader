@@ -129,7 +129,8 @@ public class ArticleDetailFragment extends Fragment implements
                 } else {
                     mPhotoView.setVisibility(View.VISIBLE);
                     mCollapsingToolbar.setBackgroundColor(getResources().getColor(android.R.color.transparent));
-                    mRootView.findViewById(R.id.meta_bar).setBackgroundColor(getResources().getColor(android.R.color.transparent));
+                    mRootView.findViewById(R.id.article_title).setBackgroundColor(getResources().getColor(android.R.color.transparent));
+                    mRootView.findViewById(R.id.article_byline).setBackgroundColor(getResources().getColor(android.R.color.transparent));
                 }
             }
         });
@@ -175,7 +176,7 @@ public class ArticleDetailFragment extends Fragment implements
         });
 
         bindViews();
-        updateStatusBar();
+//        updateStatusBar();
         return mRootView;
     }
 
@@ -242,9 +243,12 @@ public class ArticleDetailFragment extends Fragment implements
                                 Palette p = Palette.generate(bitmap, 12);
                                 mMutedColor = p.getDarkMutedColor(0xFF333333);
                                 mPhotoView.setImageBitmap(imageContainer.getBitmap());
-                                mRootView.findViewById(R.id.meta_bar)
+                                mRootView.findViewById(R.id.article_title)
                                         .setBackgroundColor(mMutedColor);
-                                updateStatusBar();
+                                mRootView.findViewById(R.id.article_byline)
+                                        .setBackgroundColor(mMutedColor);
+
+//                                updateStatusBar();
                             }
                         }
 
