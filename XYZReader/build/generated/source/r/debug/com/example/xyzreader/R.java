@@ -2785,7 +2785,7 @@ containing a value of this type.
         public static final int design_menu_item_text=0x7f0d007b;
         public static final int design_navigation_view=0x7f0d007a;
         public static final int disableHome=0x7f0d000e;
-        public static final int draw_insets_frame_layout=0x7f0d0083;
+        public static final int draw_insets_frame_layout=0x7f0d0084;
         public static final int edit_query=0x7f0d0060;
         public static final int end=0x7f0d0026;
         public static final int end_padder=0x7f0d0095;
@@ -2836,7 +2836,7 @@ containing a value of this type.
         public static final int scrollIndicatorUp=0x7f0d004e;
         public static final int scrollView=0x7f0d004f;
         public static final int scrollable=0x7f0d003c;
-        public static final int scrollview=0x7f0d0084;
+        public static final int scrollview=0x7f0d0083;
         public static final int search_badge=0x7f0d0062;
         public static final int search_bar=0x7f0d0061;
         public static final int search_button=0x7f0d0063;
