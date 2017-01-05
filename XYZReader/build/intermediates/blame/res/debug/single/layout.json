@@ -12,12 +12,12 @@
         "source": "C:\\Users\\Raghvendra\\XYZReader\\XYZReader\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.0\\res\\layout\\notification_template_media.xml"
     },
     {
-        "merged": "C:\\Users\\Raghvendra\\XYZReader\\XYZReader\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_header.xml",
-        "source": "C:\\Users\\Raghvendra\\XYZReader\\XYZReader\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.2.0\\res\\layout\\design_navigation_item_header.xml"
-    },
-    {
         "merged": "C:\\Users\\Raghvendra\\XYZReader\\XYZReader\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_article_detail.xml",
         "source": "C:\\Users\\Raghvendra\\XYZReader\\XYZReader\\src\\main\\res\\layout\\fragment_article_detail.xml"
+    },
+    {
+        "merged": "C:\\Users\\Raghvendra\\XYZReader\\XYZReader\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_header.xml",
+        "source": "C:\\Users\\Raghvendra\\XYZReader\\XYZReader\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.2.0\\res\\layout\\design_navigation_item_header.xml"
     },
     {
         "merged": "C:\\Users\\Raghvendra\\XYZReader\\XYZReader\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_lines.xml",

@@ -13,6 +13,7 @@ import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.app.ShareCompat;
 import android.support.v4.widget.NestedScrollView;
 import android.support.v7.graphics.Palette;
+import android.support.v7.widget.Toolbar;
 import android.text.Html;
 import android.text.format.DateUtils;
 import android.text.method.LinkMovementMethod;
@@ -20,7 +21,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.android.volley.VolleyError;
@@ -52,7 +52,7 @@ public class ArticleDetailFragment extends Fragment implements
     private AppBarLayout mAppBar;
     private int mTopInset;
     private View mPhotoContainerView;
-    private ImageView mPhotoView;
+    private ThreeTwoImageView mPhotoView;
     private int mScrollY;
     private boolean mIsCard = false;
     private int mStatusBarFullOpacityBottom;
@@ -116,21 +116,30 @@ public class ArticleDetailFragment extends Fragment implements
 
         mCollapsingToolbar = (CollapsingToolbarLayout) mRootView.findViewById(R.id.collapsing_toolbar);
         mAppBar = (AppBarLayout) mRootView.findViewById(R.id.appbar);
-//        mAppBar.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
-//            @Override
-//            public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
-//                if (verticalOffset < -180) {
-//                    mPhotoView.setVisibility(View.INVISIBLE);
-//                    if (mMutedColor != 0xFF333333)
-//                        mCollapsingToolbar.setBackgroundColor(mMutedColor);
-//                } else {
-//                    mPhotoView.setVisibility(View.VISIBLE);
-//                    mCollapsingToolbar.setBackgroundColor(getResources().getColor(android.R.color.transparent));
-//                    mRootView.findViewById(R.id.article_title).setBackgroundColor(getResources().getColor(android.R.color.transparent));
-//                    mRootView.findViewById(R.id.article_byline).setBackgroundColor(getResources().getColor(android.R.color.transparent));
-//                }
-//            }
-//        });
+        Toolbar toolbar = (Toolbar) mRootView.findViewById(R.id.toolbar);
+        toolbar.setNavigationIcon(getResources().getDrawable(R.drawable.ic_arrow_back, null));
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().onBackPressed();
+            }
+        });
+        mPhotoView = (ThreeTwoImageView) mRootView.findViewById(R.id.photo);
+        mAppBar.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
+            @Override
+            public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
+                if (verticalOffset < -(mPhotoView.getMeasuredHeight()/2)) {
+                    mPhotoView.setVisibility(View.INVISIBLE);
+                    if (mMutedColor != 0xFF333333)
+                        mCollapsingToolbar.setBackgroundColor(mMutedColor);
+                } else {
+                    mPhotoView.setVisibility(View.VISIBLE);
+                    mCollapsingToolbar.setBackgroundColor(getResources().getColor(android.R.color.transparent));
+                    mRootView.findViewById(R.id.article_title).setBackgroundColor(getResources().getColor(android.R.color.transparent));
+                    mRootView.findViewById(R.id.article_byline).setBackgroundColor(getResources().getColor(android.R.color.transparent));
+                }
+            }
+        });
 
         mScrollView = (NestedScrollView) mRootView.findViewById(R.id.scrollview);
 //        mScrollView.setOnScrollChangeListener(new NestedScrollView.OnScrollChangeListener() {
@@ -151,7 +160,7 @@ public class ArticleDetailFragment extends Fragment implements
 //            }
 //        });
 
-        mPhotoView = (ImageView) mRootView.findViewById(R.id.photo);
+
 //        mPhotoContainerView = mRootView.findViewById(R.id.photo_container);
 
 //        mStatusBarColorDrawable = new ColorDrawable(0);
