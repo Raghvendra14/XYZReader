@@ -1,5 +1,6 @@
 package com.example.xyzreader.ui;
 
+import android.app.ActivityOptions;
 import android.app.LoaderManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -7,6 +8,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.Loader;
 import android.database.Cursor;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -14,6 +16,8 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.support.v7.widget.Toolbar;
 import android.text.format.DateUtils;
+import android.transition.AutoTransition;
+import android.transition.TransitionManager;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -73,6 +77,14 @@ public class ArticleListActivity extends AppCompatActivity implements
         unregisterReceiver(mRefreshingReceiver);
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT) {
+            getLoaderManager().restartLoader(0, null, this);
+        }
+    }
+
     private boolean mIsRefreshing = false;
 
     private BroadcastReceiver mRefreshingReceiver = new BroadcastReceiver() {
@@ -130,8 +142,32 @@ public class ArticleListActivity extends AppCompatActivity implements
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    startActivity(new Intent(Intent.ACTION_VIEW,
-                            ItemsContract.Items.buildItemUri(getItemId(vh.getAdapterPosition()))));
+                    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT) {
+                        view.animate()
+                                .alpha(0f)
+                                .translationY(-view.getHeight())
+                                .setDuration(getResources().getInteger(
+                                        android.R.integer.config_shortAnimTime))
+                                .withEndAction(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        startActivity(new Intent(Intent.ACTION_VIEW,
+                                                ItemsContract.Items.buildItemUri(getItemId(vh.getAdapterPosition()))));
+                                    }
+                                });
+                    } else if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP && Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT){
+                        ViewGroup root = (ViewGroup) findViewById(android.R.id.content);
+                        TransitionManager.beginDelayedTransition(root, new AutoTransition());
+                        startActivity(new Intent(Intent.ACTION_VIEW,
+                                ItemsContract.Items.buildItemUri(getItemId(vh.getAdapterPosition()))));
+                    } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                        Intent intent = new Intent(Intent.ACTION_VIEW,
+                                ItemsContract.Items.buildItemUri(getItemId(vh.getAdapterPosition())));
+                        Bundle bundle = ActivityOptions
+                                .makeSceneTransitionAnimation(ArticleListActivity.this)
+                                .toBundle();
+                        startActivity(intent, bundle);
+                    }
                 }
             });
             return vh;
