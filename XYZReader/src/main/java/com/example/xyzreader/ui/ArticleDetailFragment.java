@@ -7,6 +7,7 @@ import android.content.Loader;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
@@ -17,10 +18,13 @@ import android.support.v7.widget.Toolbar;
 import android.text.Html;
 import android.text.format.DateUtils;
 import android.text.method.LinkMovementMethod;
+import android.transition.Slide;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 
 import com.android.volley.VolleyError;
@@ -180,6 +184,19 @@ public class ArticleDetailFragment extends Fragment implements
                         .getIntent(), getString(R.string.action_share)));
             }
         });
+
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            Slide slide = new Slide(Gravity.BOTTOM);
+            slide.excludeTarget(android.R.id.statusBarBackground, true);
+            slide.excludeTarget(android.R.id.navigationBarBackground, true);
+            slide.excludeTarget(R.id.appbar, true);
+            slide.setInterpolator(
+                    AnimationUtils.loadInterpolator(getActivity(),
+                            android.R.interpolator.linear_out_slow_in));
+            slide.setDuration(getResources().getInteger(android.R.integer.config_longAnimTime));
+            getActivity().getWindow().setEnterTransition(slide);
+        }
 
         bindViews();
 //        updateStatusBar();
