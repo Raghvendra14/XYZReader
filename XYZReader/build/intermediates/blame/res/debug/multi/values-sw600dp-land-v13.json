@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "C:\\Users\\Raghvendra\\XYZReader\\XYZReader\\build\\intermediates\\res\\merged\\debug\\values-sw600dp-land-v13\\values-sw600dp-land-v13.xml",
+        "outputFile": "C:\\Users\\DELL\\AndroidStudioProjects\\XYZReader\\XYZReader\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sw600dp-land-v13\\values-sw600dp-land-v13.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 94
                 },
                 "from": {
-                    "file": "C:\\Users\\Raghvendra\\XYZReader\\XYZReader\\src\\main\\res\\values-sw600dp-land\\macro_layout.xml",
+                    "file": "C:\\Users\\DELL\\AndroidStudioProjects\\XYZReader\\XYZReader\\src\\main\\res\\values-sw600dp-land\\macro_layout.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -30,7 +30,7 @@
                     "endOffset": 148
                 },
                 "from": {
-                    "file": "C:\\Users\\Raghvendra\\XYZReader\\XYZReader\\src\\main\\res\\values-sw600dp-land\\macro_layout.xml",
+                    "file": "C:\\Users\\DELL\\AndroidStudioProjects\\XYZReader\\XYZReader\\src\\main\\res\\values-sw600dp-land\\macro_layout.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,
@@ -49,7 +49,7 @@
                     "endOffset": 200
                 },
                 "from": {
-                    "file": "C:\\Users\\Raghvendra\\XYZReader\\XYZReader\\src\\main\\res\\values-sw600dp-land\\macro_layout.xml",
+                    "file": "C:\\Users\\DELL\\AndroidStudioProjects\\XYZReader\\XYZReader\\src\\main\\res\\values-sw600dp-land\\macro_layout.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
@@ -68,7 +68,7 @@
                     "endOffset": 247
                 },
                 "from": {
-                    "file": "C:\\Users\\Raghvendra\\XYZReader\\XYZReader\\src\\main\\res\\values-sw600dp-land\\macro_layout.xml",
+                    "file": "C:\\Users\\DELL\\AndroidStudioProjects\\XYZReader\\XYZReader\\src\\main\\res\\values-sw600dp-land\\macro_layout.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,

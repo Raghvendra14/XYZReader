@@ -20,6 +20,7 @@ import android.transition.AutoTransition;
 import android.transition.TransitionManager;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.xyzreader.R;
@@ -164,7 +165,9 @@ public class ArticleListActivity extends AppCompatActivity implements
                         Intent intent = new Intent(Intent.ACTION_VIEW,
                                 ItemsContract.Items.buildItemUri(getItemId(vh.getAdapterPosition())));
                         Bundle bundle = ActivityOptions
-                                .makeSceneTransitionAnimation(ArticleListActivity.this)
+                                .makeSceneTransitionAnimation(ArticleListActivity.this,
+                                        vh.thumbnailView,
+                                        vh.thumbnailView.getTransitionName())
                                 .toBundle();
                         startActivity(intent, bundle);
                     }

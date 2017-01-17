@@ -185,24 +185,28 @@ public class ArticleDetailFragment extends Fragment implements
             }
         });
 
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            Slide slide = new Slide(Gravity.BOTTOM);
-            slide.excludeTarget(android.R.id.statusBarBackground, true);
-            slide.excludeTarget(android.R.id.navigationBarBackground, true);
-            slide.excludeTarget(R.id.appbar, true);
-            slide.setInterpolator(
-                    AnimationUtils.loadInterpolator(getActivity(),
-                            android.R.interpolator.linear_out_slow_in));
-            slide.setDuration(getResources().getInteger(android.R.integer.config_longAnimTime));
-            getActivity().getWindow().setEnterTransition(slide);
-        }
-
         bindViews();
 //        updateStatusBar();
         return mRootView;
     }
-//
+
+    @Override
+    public void onResume() {
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+//            Slide slide = new Slide(Gravity.BOTTOM);
+//            slide.excludeTarget(android.R.id.statusBarBackground, true);
+//            slide.excludeTarget(android.R.id.navigationBarBackground, true);
+//            slide.excludeTarget(R.id.appbar, true);
+//            slide.setInterpolator(
+//                    AnimationUtils.loadInterpolator(getActivity(),
+//                            android.R.interpolator.linear_out_slow_in));
+//            slide.setDuration(getResources().getInteger(android.R.integer.config_longAnimTime));
+//            getActivity().getWindow().setEnterTransition(slide);
+//        }
+        super.onResume();
+    }
+
+    //
 //    private void updateStatusBar() {
 //        int color = 0;
 //        if (mPhotoView != null && mTopInset != 0 && mScrollY > 0) {
