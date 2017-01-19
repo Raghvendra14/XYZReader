@@ -45,26 +45,26 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/article_title"
-                    style="?android:attr/textAppearanceMedium"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingBottom="@dimen/detail_metabar_title_bottom_padding"
-                    android:fontFamily="sans-serif-medium"
-                    android:textColor="#fff"
-                    android:textStyle="bold"
-                    android:textSize="@dimen/detail_title_text_size"
-                    android:maxLines="2"
-                    android:lineSpacingMultiplier="0.9" />
+                    <TextView
+                        android:id="@+id/article_title"
+                        style="?android:attr/textAppearanceMedium"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="@dimen/detail_metabar_title_bottom_padding"
+                        android:fontFamily="sans-serif-medium"
+                        android:textColor="#fff"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/detail_title_text_size"
+                        android:maxLines="2"
+                        android:lineSpacingMultiplier="0.9" />
 
-                <TextView
-                    android:id="@+id/article_byline"
-                    style="@style/TitleTextStyle"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textStyle="italic"
-                    android:paddingBottom="@dimen/byline_padding_bottom"/>
+                    <TextView
+                        android:id="@+id/article_byline"
+                        style="@style/TitleTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textStyle="italic"
+                        android:paddingBottom="@dimen/byline_padding_bottom"/>
                 </LinearLayout>
             </android.support.v7.widget.Toolbar>
 
@@ -77,47 +77,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
-        <!--<com.example.xyzreader.ui.DrawInsetsFrameLayout-->
-            <!--android:id="@+id/draw_insets_frame_layout"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="match_parent">-->
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_gravity="center_horizontal"
-                android:maxWidth="@dimen/detail_card_max_width"
-                android:background="#fff"
-                android:elevation="2dp"
-                android:paddingTop="@dimen/detail_card_top_margin">
-
-
-                    <!--<com.example.xyzreader.ui.MaxWidthLinearLayout-->
-                        <!--android:orientation="vertical"-->
-                        <!--android:layout_width="match_parent"-->
-                        <!--android:layout_height="wrap_content"-->
-                        <!-->-->
-
-
-                        <TextView
-                            android:id="@+id/article_body"
-                            style="@style/DetailTextStyle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="sans-serif-medium-thin"
-                            android:layout_marginLeft="@dimen/detail_inner_horiz_margin"
-                            android:layout_marginRight="@dimen/detail_inner_horiz_margin"
-                            android:paddingBottom="@dimen/detail_body_bottom_margin"
-                            />
-
-                    <!--</com.example.xyzreader.ui.MaxWidthLinearLayout>-->
-
-            </LinearLayout>
-
-        <!--</com.example.xyzreader.ui.DrawInsetsFrameLayout>-->
+        <include layout="@layout/article_detail" />
 
     </android.support.v4.widget.NestedScrollView>
+
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/share_fab"

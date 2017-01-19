@@ -132,7 +132,7 @@ public class ArticleDetailFragment extends Fragment implements
         mAppBar.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
             @Override
             public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
-                if (verticalOffset < -(mPhotoView.getMeasuredHeight()/2)) {
+                if (verticalOffset < -(mPhotoView.getMeasuredHeight()/3)) {
                     mPhotoView.setVisibility(View.INVISIBLE);
                     if (mMutedColor != 0xFF333333)
                         mCollapsingToolbar.setBackgroundColor(mMutedColor);
