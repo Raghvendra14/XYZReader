@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <bool name="detail_is_card">true</bool>
-    <dimen name="detail_card_top_margin">48dp</dimen>
-    <dimen name="detail_photo_height">384dp</dimen>
-    <dimen name="toolbar_height">128dp</dimen>
-</resources>
